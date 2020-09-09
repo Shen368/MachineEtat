@@ -1,4 +1,6 @@
-#pragma once
+﻿#pragma once
+#include <iostream>
+
 class Human
 {
 	private:
@@ -11,6 +13,15 @@ class Human
 	public:
 		Human();
 		~Human();
-
+		friend std::ostream& operator<< (std::ostream&, const Human&);
+		int getLife();
+		int getHunger();
+		int getThirsty();
+		int getTiredness();
+		int getTemperature();
+		void setLife(int life);
+		void setHunger(int hunger);
+		void setThirsty(int thirsty);
+		void setTiredness(int tiredness);
+		void setTemperature(int temperature);
 };
-
