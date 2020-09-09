@@ -11,11 +11,12 @@ Human::Human() {
 Human::~Human(){}
 
 std::ostream& operator<< (std::ostream& os, const Human& h) {
-	os << h.m_life << std::endl;
-	os << h.m_hunger << std::endl;
-	os << h.m_thirsty << std::endl;
-	os << h.m_tiredness << std::endl;
-	os << h.m_temperature << std::endl;
+	os << "Life: " << h.m_life << std::endl;
+	os << "Hunger: " << h.m_hunger << std::endl;
+	os << "Thirsty: " << h.m_thirsty << std::endl;
+	os << "Tiredness: " << h.m_tiredness << std::endl;
+	os << "Temperature: " << h.m_temperature << std::endl;
+	os << std::endl;
 	return os;
 }
 

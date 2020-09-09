@@ -9,9 +9,12 @@
 
 int main()
 {
+    // Init human
     Human human;
-
     std::cout << human;
+
+    int life = human.getLife();
+    std::cout << life;
 
     return 0;
 }
