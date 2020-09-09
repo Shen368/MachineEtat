@@ -9,7 +9,7 @@ int main()
 {
     // Init human
     Human human;
-    std::cout << human;
+    std::cout << "Human creation" << std::endl << human;
 
     int life = human.getLife();
     std::cout << life;
