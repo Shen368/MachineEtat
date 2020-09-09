@@ -3,6 +3,15 @@
 
 #include <iostream>
 
+using namespace std;
+
+
+int hours, minute;
+int ReserveEau;
+int foodQte;
+
+
+
 int main()
 {
     std::cout << "Hello World!\n";
