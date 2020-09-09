@@ -42,20 +42,40 @@ int Human::getTemperature() {
 
 void Human::setLife(int life) {
 	m_life += life;
+	if (m_life > 100)
+	{
+		m_life = 100;
+	}
 }
 
 void Human::setHunger(int hunger) {
-	m_life += hunger;
+	m_hunger += hunger;
+	if (hunger > 10)
+	{
+		hunger = 10;
+	}
 }
 
 void Human::setThirsty(int thirsty) {
-	m_life += thirsty;
+	m_thirsty += thirsty;
+	if (thirsty > 10)
+	{
+		thirsty = 10;
+	}
 }
 
 void Human::setTiredness(int tiredness) {
-	m_life += tiredness;
+	m_tiredness += tiredness;
+	if (tiredness > 10)
+	{
+		tiredness = 10;
+	}
 }
 
 void Human::setTemperature(int temperature) {
-	m_life += temperature;
+	m_temperature += temperature;
+	if (temperature > 20)
+	{
+		temperature = 20;
+	}
 }
