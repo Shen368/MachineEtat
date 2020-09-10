@@ -14,17 +14,12 @@ using namespace std::chrono;
 
 int Tiredness = 20;
 
-int main()
+void humanIsTired(Human& human)
 {
-    // Init human
-    Human human;
-    std::cout << "Human creation" << std::endl << human;
-
-    // If human is tired
     if (human.getTiredness() < Tiredness)
     {
+        std::cout << "Enter in sleep state." << std::endl;
         std::cout << "Tiredness: " << human.getTiredness() << std::endl;
-        // Sleep
         std::cout << "Human need to sleep." << std::endl;
         while (human.getTiredness() < Tiredness)
         {
@@ -33,7 +28,18 @@ int main()
             std::cout << "Tiredness: " << human.getTiredness() << std::endl;
         }
         std::cout << "Human isn't tired anymore." << std::endl;
+        std::cout << "Moving to an other state." << std::endl;
     }
+}
+
+int main()
+{
+    // Init human
+    Human human;
+    std::cout << "Human creation" << std::endl << human;
+
+    // Check if human is tired
+    humanIsTired(human);
 
     return 0;
 }
