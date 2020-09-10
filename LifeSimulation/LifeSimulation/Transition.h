@@ -11,7 +11,6 @@ private:
 	function<bool()> m_Controle;
 
 public:
-	Transition();
 	Transition(const std::function<bool()> NextControle);
 	const std::function<bool()> getControle();
 

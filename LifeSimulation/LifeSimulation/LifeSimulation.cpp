@@ -7,13 +7,38 @@
 #include "Transition.h"
 #include "States.h"
 
+/*
+void CreateStateMachine() {
+
+	States* start = new States();
+	States* end = new States();
+	Transition* transition = new Transition();
+	start->AddTransition(transition, end);
+}
+*/
 
 int main()
 {
-    Human* jack = new Human(true, true, false, false);
+	Human* jack = new Human(true, true, false, false);
 
+	States* Hungry = new States("I'm Hungry");
+	States* Thirsty = new States("I'm Thirsty");
+	States* Eat = new States("Sorry Eating food now come later");
+	
+	
 
-    return 0;
+	Transition  transHungry([&jack]() {
+		cout << "GettingFood" << endl;
+		if (jack->m_hunger ? true : false);
+		});
+
+	Transition transGetFood([&jack]() {
+		cout << "Going get some fooddd" << endl;
+	
+
+		});
+
+		return 0;
 }
 
 

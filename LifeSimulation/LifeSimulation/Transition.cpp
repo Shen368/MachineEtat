@@ -1,18 +1,15 @@
 #include "Transition.h"
 
-Transition::Transition() {
-
-}
 
 Transition::Transition(const std::function<bool()> nextControle) {
 
-	m_Controle = nextControle;
+	this->m_Controle = nextControle;
 }
 
 const function<bool()> Transition::getControle()
 {
 	
-	return m_Controle;
+	return this->m_Controle;
 }
 
 

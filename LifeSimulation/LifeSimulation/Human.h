@@ -4,10 +4,6 @@
 class Human
 {
 	private:
-		bool m_life;
-		bool m_hunger;
-		bool m_thirsty;
-		bool m_food;
 
 		int m_tiredness;
 		int m_temperature;
@@ -18,9 +14,15 @@ class Human
 		int tiredness_max = 10;
 
 	public:
+
+		bool m_life;
+		bool m_hunger;
+		bool m_thirsty;
+		bool m_food;
+
 		Human();
 		~Human();
-		Human(bool CheckAlive, bool CheckHunger,  bool CheckThirsty,bool CheckFood );
+		Human(bool isAlive, bool isHungry,  bool isThirsty,bool haveFood );
 		friend std::ostream& operator<< (std::ostream&, const Human&);
 		int GetLife();
 		int GetHunger();
