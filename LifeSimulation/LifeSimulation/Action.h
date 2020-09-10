@@ -12,10 +12,10 @@ private:
 public:
     Action();
     Action(std::string name, int cost = 0);
-    void GetName();
-    void GetCost();
-    void GetPrecondition();
-    void GetEffect();
+    std::string GetName();
+    int GetCost();
+    std::string GetPrecondition();
+    std::string GetEffect();
     void AddPrecondition(std::string name);
     void AddEffect(std::string name);
 };
