@@ -3,16 +3,20 @@
 #include<iostream>
 using namespace std;
 
-
+class states;
 class StateMachine
 {
 	private:
-		vector<string> m_state;
+		states* m_state;
+		unsigned int m_FoodQuantity;
 
 	public:
 
-		StateMachine();
+		StateMachine(unsigned int CurrentQuantity);
+		~StateMachine();
 		void ProcessState();
-
+		unsigned int getCurrentFood();
+		void Eat(unsigned int quantity);
+		void BuyFood(unsigned int quandtity);
 };
 
