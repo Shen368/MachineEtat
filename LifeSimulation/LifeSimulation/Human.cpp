@@ -8,7 +8,7 @@ Human::Human() {
 	m_temperature = 37;
 }
 
-Human::~Human(){}
+Human::~Human() {}
 
 std::ostream& operator<< (std::ostream& os, const Human& h) {
 	os << "Life: " << h.m_life << std::endl;
