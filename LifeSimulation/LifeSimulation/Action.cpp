@@ -9,6 +9,8 @@ Action::Action(std::string name, int cost) {
     m_cost = cost;
 }
 
+Action::~Action() {}
+
 std::string Action::GetName() {
     return m_name;
 }
@@ -17,8 +19,8 @@ int Action::GetCost() {
     return m_cost;
 }
 
-std::string Action::GetPrecondition() {
-    return m_precondition;
+std::vector<std::string> Action::GetPreconditions() {
+    return m_preconditions;
 }
 
 std::string Action::GetEffect() {
@@ -26,7 +28,7 @@ std::string Action::GetEffect() {
 }
 
 void Action::AddPrecondition(std::string name) {
-    m_precondition = name;
+    m_preconditions.push_back(name);
 }
 
 void Action::AddEffect(std::string name) {
