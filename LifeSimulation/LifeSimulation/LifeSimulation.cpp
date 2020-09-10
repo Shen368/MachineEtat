@@ -12,14 +12,14 @@ using namespace std::chrono;
 //int ReserveEau;
 //int foodQte;
 
-int TirednessAlert = 14;
-int TirednessMax = 20;
+int TirednessAlert = 12;
+int TirednessLimit = 20;
 
 void sleep(Human& human)
 {
     std::cout << "Enter in sleep state." << std::endl;
     std::cout << "Human need to sleep." << std::endl;
-    while (human.getTiredness() < TirednessMax)
+    while (human.getTiredness() < TirednessLimit)
     {
         sleep_for(2s);
         human.addTiredness(2);
