@@ -103,3 +103,35 @@ void Human::addTiredness(int tiredness) {
 void Human::addTemperature(int temperature) {
 	m_temperature += temperature;
 }
+
+void Human::removeLife(int life) {
+	m_life -= life;
+	if (m_life > life_max) {
+		m_life = life_max;
+	}
+}
+
+void Human::removeHunger(int hunger) {
+	m_hunger -= hunger;
+	if (hunger > hunger_max) {
+		hunger = hunger_max;
+	}
+}
+
+void Human::removeThirsty(int thirsty) {
+	m_thirsty -= thirsty;
+	if (thirsty > thirsty_max) {
+		thirsty = thirsty_max;
+	}
+}
+
+void Human::removeTiredness(int tiredness) {
+	m_tiredness -= tiredness;
+	if (tiredness > tiredness_max) {
+		tiredness = tiredness_max;
+	}
+}
+
+void Human::removeTemperature(int temperature) {
+	m_temperature -= temperature;
+}

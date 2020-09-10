@@ -34,4 +34,9 @@ class Human
 		void addThirsty(int thirsty);
 		void addTiredness(int tiredness);
 		void addTemperature(int temperature);
+		void removeLife(int life);
+		void removeHunger(int hunger);
+		void removeThirsty(int thirsty);
+		void removeTiredness(int tiredness);
+		void removeTemperature(int temperature);
 };
