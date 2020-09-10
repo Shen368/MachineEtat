@@ -9,11 +9,12 @@ class Human
 		int m_thirsty;
 		int m_tiredness;
 		int m_temperature;
+		bool m_alive;
 
-		int life_max = 100;
-		int hunger_max = 10;
-		int thirsty_max = 10;
-		int tiredness_max = 10;
+		int m_life_max = 20;
+		int m_hunger_max = 10;
+		int m_thirsty_max = 10;
+		int m_tiredness_max = 10;
 
 	public:
 		Human();
@@ -24,11 +25,13 @@ class Human
 		int GetThirsty();
 		int GetTiredness();
 		int GetTemperature();
+		bool GetAlive();
 		void SetLife(int life);
 		void SetHunger(int hunger);
 		void SetThirsty(int thirsty);
 		void SetTiredness(int tiredness);
 		void SetTemperature(int temperature);
+		void SetAlive(bool alive);
 		void AddLife(int life);
 		void AddHunger(int hunger);
 		void AddThirsty(int thirsty);
