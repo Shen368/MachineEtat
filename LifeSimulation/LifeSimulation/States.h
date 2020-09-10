@@ -11,22 +11,31 @@ class StateMachine;
 
 class States
 {
-public:
-	void AddTransition(Transition* transi, States* EndStat);
-	void Process(unsigned int quandtity);
-
 private:
-	vector<Transition*> m_TransitionList;
-};
+	vector<Transition> m_TransitionList;
+	vector<States*> m_StateFinish;
+	const char* m_TextOutPut;
 
-class Manger :public States
-{
 public:
-	virtual void Process(unsigned int quantity);
-};
 
-class Ranger :public States
-{
-public:
-	virtual void Process(unsigned int quantity);
+	States(const char* TextOutPut);
+
+	//Transition
+	void AddTransition(Transition transi);
+	void setTransition(vector<Transition> ListTrans);
+	const vector<Transition>& getTransition();
+
+	//
+	void AddToFinishedList(States* states);
+
+	// get / set m_StateFinish
+	const vector<States*>& getStateFinish();
+	void setStateFinish(vector<States*>& NextStateFinish);
+
+	// current Action
+	void Process();
+
+
+
+
 };

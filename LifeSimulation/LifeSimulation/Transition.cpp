@@ -1,15 +1,45 @@
 #include "Transition.h"
 
-Transition::Transition() {}
+Transition::Transition() {
 
-void Transition::checkHumanHunger(Human& human)
-{
-    if (human.getHunger() < 10)
-    {
-        std::cout << "Human is hunger." << std::endl;
-        std::cout << "Hunger: " << human.getHunger() << std::endl;
-    }
 }
+
+Transition::Transition(const std::function<bool()> nextControle) {
+
+	m_Controle = nextControle;
+}
+
+const function<bool()> Transition::getControle()
+{
+	
+	return m_Controle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

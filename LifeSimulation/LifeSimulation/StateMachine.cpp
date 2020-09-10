@@ -1,31 +1,49 @@
 #include "StateMachine.h"
 
-StateMachine::StateMachine(){
+
+StateMachine::StateMachine(States* Start, Human* jack) {
+
+	m_state = Start;
+	m_currentState = Start;
+	m_jack = jack;
 }
 
-StateMachine::~StateMachine() {
-	delete m_state;
+vector<States*>& StateMachine::getAllStates() {
+	return m_StatesList;
+}
+void StateMachine::AddStates(States* nextState) {
+
+	m_StatesList.push_back(nextState);
+}
+void StateMachine::checkTransition(const Human* jack) {
+	size_t transitionSize = m_currentState->getTransition().size();
+	for (int i = 0; i < transitionSize; i++)
+	{
+		Transition currentTransition = m_currentState->getTransition()[i];
+		if (currentTransition.getControle())
+		{
+			m_currentState = m_currentState->getStateFinish()[i];
+			break;
+		}
+	}
+}
+void StateMachine::ProcessState() {
+
 }
 
 void StateMachine::ProcessState() {
-	States* currentState = m_currentState;
-	for (int i = 0; i < currentState->TransitionList.size(); ++i) {
-		if(currentState->m_transition[i])
-			ChangeState(currentState->)
+
+	char* output = nullptr;
+
+	for (;;) {
+		if (output != "dead") {
+			cout << "GameState Day :" << m_jack.isAlive << endl;
+			m_currentState->Process();
+			checkTransition(m_jack);
+		}
+		else {
+			break;
+		}
 	}
 }
 
-
-/*
-void StateMachine::Eat(unsigned int quantity) {
-	m_state->Eat(*this, quantity);
-}
-
-void StateMachine::BuyFood(unsigned int quantity) {
-	m_state->BuyFood(*this, quantity);
-}
-
-unsigned int StateMachine::getCurrentFood() {
-	return m_FoodQuantity;
-}
-*/
