@@ -1,10 +1,11 @@
 #pragma once
 #include<vector>
 #include<iostream>
+
 #include "States.h"
 #include "Transition.h"
-using namespace std;
 
+using namespace std;
 
 class StateMachine
 {
@@ -25,4 +26,3 @@ class StateMachine
 		void BuyFood(unsigned int quandtity);
 		*/
 };
-
