@@ -10,35 +10,63 @@
 /*
 void CreateStateMachine() {
 
-	States* start = new States();
-	States* end = new States();
-	Transition* transition = new Transition();
-	start->AddTransition(transition, end);
+    States* start = new States();
+    States* end = new States();
+    Transition* transition = new Transition();
+    start->AddTransition(transition, end);
 }
 */
 
 int main()
 {
-	Human* jack = new Human(true, true, false, false);
+    Human* jack = new Human(true, true, false, false);
 
-	States* Hungry = new States("I'm Hungry");
-	States* Thirsty = new States("I'm Thirsty");
-	States* Eat = new States("Sorry Eating food now come later");
-	
-	
+    States* Hungry = new States("I'm Hungry");
+    States* Eat = new States("Sorry Eating food now come later");
+    States* Thirsty = new States("I'm Thirsty");
 
-	Transition  transHungry([&jack]() {
-		cout << "GettingFood" << endl;
-		if (jack->m_hunger ? true : false);
-		});
+    Transition  transHungry([&jack]() {
+        cout << "GettingFood" << endl;
+        if ( jack->m_life && jack->m_hunger) return true;
+        return false;
+        });
 
-	Transition transGetFood([&jack]() {
-		cout << "Going get some fooddd" << endl;
-	
+    Transition  transEat([&jack]() {
+        std::cout << "Eating food" << endl;
+        if (jack->m_life && jack->m_hunger &&jack->m_food) {
+            jack->m_food = false;
+            }
+        return false;
+        });
 
-		});
+    Transition transDrink([&jack]() {
+        std::cout << "Do we have any water?" << endl;
+        if (jack->m_life && jack->m_thirsty && jack->m_food) {
+            jack->m_thirsty = false;
+            jack->m_food = false;
+         }
+        return false;
+        });
 
-		return 0;
+    Hungry->AddTransition(transDrink);
+    Hungry->AddToFinishedList(Thirsty);  //AddToFinishedList is not accesible stat Liste
+    Hungry->AddTransition(transEat);
+    Hungry->AddToFinishedList(Eat);
+
+    Thirsty->AddTransition(transHungry);
+    Thirsty->AddToFinishedList(Hungry);
+
+    StateMachine stateMachine(Hungry, jack);
+    stateMachine.AddStates(Thirsty);
+    stateMachine.AddStates(Eat);
+    stateMachine.ProcessState();
+
+    delete jack;
+    delete Hungry;
+    delete Eat;
+    delete Thirsty;
+
+    return 0;
 }
 
 

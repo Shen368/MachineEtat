@@ -7,7 +7,6 @@
 //#include "Human.h"
 #include "StateMachine.h"
 
-class StateMachine;
 
 class States
 {

@@ -35,15 +35,10 @@ void StateMachine::ProcessState() {
 
 	char* output = nullptr;
 
-	for (;;) {
-		if (output != "dead") {
-			cout << "GameState Day :" << m_jack.CheckAlive << endl;
-			m_currentState->Process();
-			checkTransition(m_jack);
-		}
-		else {
-			break;
-		}
+	while (output != "dead") {
+		cout << "GameState Day :" << m_jack->m_life << endl;
+		m_currentState->Process();
+		checkTransition(m_jack);
 	}
 }
 
