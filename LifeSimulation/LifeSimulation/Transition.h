@@ -6,10 +6,7 @@
 
 class Transition
 {
-
 public:
-
 	Transition();
 	void checkHumanHunger();
-
 };

@@ -12,23 +12,21 @@ class StateMachine;
 class States
 {
 public:
-
 	void AddTransition(Transition* transi, States* EndStat);
 	void Process(unsigned int quandtity);
 
 private:
 	vector<Transition*> m_TransitionList;
-
 };
 
-class Manger :public States {
-
+class Manger :public States
+{
 public:
 	virtual void Process(unsigned int quantity);
-
 };
 
-class Ranger :public States {
+class Ranger :public States
+{
 public:
 	virtual void Process(unsigned int quantity);
 };

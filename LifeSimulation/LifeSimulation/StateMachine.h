@@ -13,9 +13,7 @@ class StateMachine
 		States* m_state;
 		States* m_currentState;
 
-
 	public:
-
 		~StateMachine();
 		void ProcessState();
 };
