@@ -1,6 +1,7 @@
 #pragma once
 #include<vector>
 #include<iostream>
+
 using namespace std;
 
 class states;
@@ -19,4 +20,3 @@ class StateMachine
 		void Eat(unsigned int quantity);
 		void BuyFood(unsigned int quandtity);
 };
-

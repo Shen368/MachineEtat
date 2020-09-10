@@ -1,7 +1,11 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+
 #include "Human.h"
+#include "StateMachine.h"
+#include "Transition.h"
+#include "States.h"
 
 // sleep_for, sleep_until
 using namespace std::this_thread;
@@ -77,12 +81,21 @@ void checkHumanTemperature(Human& human)
 
 int main()
 {
-    // Init human
-    Human human;
-    std::cout << "Human creation" << std::endl << human;
+    try
+    {
+        // Init human
+        Human human;
+        std::cout << "Human creation" << std::endl << human;
 
-    // Check human tiredness
-    checkHumanTiredness(human);
+        Transition transition;
+
+        // Check human tiredness
+        transition.checkHumanTiredness(human);
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 
     return 0;
 }
