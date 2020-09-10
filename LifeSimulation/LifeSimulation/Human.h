@@ -29,4 +29,9 @@ class Human
 		void setThirsty(int thirsty);
 		void setTiredness(int tiredness);
 		void setTemperature(int temperature);
+		void addLife(int life);
+		void addHunger(int hunger);
+		void addThirsty(int thirsty);
+		void addTiredness(int tiredness);
+		void addTemperature(int temperature);
 };
