@@ -6,14 +6,10 @@
 
 class Transition
 {
-private:
-	States states;
-	int TirednessAlert = 12;
-	int TirednessLimit = 20;
 
 public:
+
 	Transition();
-	void AddTransition(Transition& transi, States& EndStat);
-	/*void checkHumanTiredness(Human& human);
-	bool humanIsTired(Human& human);*/
+	void checkHumanHunger(Human& human);
+
 };

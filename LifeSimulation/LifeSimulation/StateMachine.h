@@ -11,18 +11,11 @@ class StateMachine
 {
 	private:
 		States* m_state;
-		Transition* m_transition;
-		unsigned int m_FoodQuantity;
+		States* m_currentState;
+
 
 	public:
 
 		~StateMachine();
-		void CreateStateMachine();
 		void ProcessState();
-
-		/*
-		unsigned int getCurrentFood();
-		void Eat(unsigned int quantity);
-		void BuyFood(unsigned int quandtity);
-		*/
 };
