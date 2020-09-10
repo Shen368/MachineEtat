@@ -6,6 +6,8 @@ States::States() {
 
 void States::AddTransition(Transition* transi, States* EndStat) {
 
+	m_TransitionList.push_back(transi);
+
 
 }
 

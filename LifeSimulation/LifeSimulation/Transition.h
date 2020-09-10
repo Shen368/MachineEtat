@@ -10,6 +10,6 @@ class Transition
 public:
 
 	Transition();
-	void checkHumanHunger(Human& human);
+	void checkHumanHunger();
 
 };

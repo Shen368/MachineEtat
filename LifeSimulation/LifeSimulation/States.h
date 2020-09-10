@@ -17,7 +17,7 @@ public:
 	void Process(unsigned int quandtity);
 
 private:
-	vector<Transition*> TransitionList;
+	vector<Transition*> m_TransitionList;
 
 };
 
@@ -26,4 +26,9 @@ class Manger :public States {
 public:
 	virtual void Process(unsigned int quantity);
 
+};
+
+class Ranger :public States {
+public:
+	virtual void Process(unsigned int quantity);
 };
