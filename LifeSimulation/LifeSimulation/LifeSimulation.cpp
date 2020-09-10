@@ -12,28 +12,65 @@ using namespace std::chrono;
 //int ReserveEau;
 //int foodQte;
 
-int TirednessLevel = 20;
+int TirednessAlert = 14;
+int TirednessMax = 20;
 
 void sleep(Human& human)
 {
     std::cout << "Enter in sleep state." << std::endl;
     std::cout << "Human need to sleep." << std::endl;
-    while (human.getTiredness() < TirednessLevel)
+    while (human.getTiredness() < TirednessMax)
     {
         sleep_for(2s);
         human.addTiredness(2);
         std::cout << "Tiredness: " << human.getTiredness() << std::endl;
     }
     std::cout << "Human isn't tired anymore." << std::endl;
-    std::cout << "Moving to an other state." << std::endl;
+    std::cout << "Exit sleep state." << std::endl;
 }
 
-void humanIsTired(Human& human)
+void checkHumanTiredness(Human& human)
 {
-    if (human.getTiredness() < TirednessLevel)
+    if (human.getTiredness() < TirednessAlert)
     {
         std::cout << "Human is tired." << std::endl;
         std::cout << "Tiredness: " << human.getTiredness() << std::endl;
+        sleep(human);
+    }
+}
+
+void checkHumanHunger(Human& human)
+{
+    if (human.getHunger() < 10)
+    {
+        std::cout << "Human is hunger." << std::endl;
+        std::cout << "Hunger: " << human.getHunger() << std::endl;
+        sleep(human);
+    }
+}
+
+void checkHumanThirsty(Human& human)
+{
+    if (human.getThirsty() < 10)
+    {
+        std::cout << "Human is thirsty." << std::endl;
+        std::cout << "Thirsty: " << human.getThirsty() << std::endl;
+        sleep(human);
+    }
+}
+
+void checkHumanTemperature(Human& human)
+{
+    if (human.getTemperature() < 10)
+    {
+        std::cout << "Human is cold." << std::endl;
+        std::cout << "Temperature: " << human.getTemperature() << std::endl;
+        sleep(human);
+    }
+    else if (human.getTemperature() > 20)
+    {
+        std::cout << "Human is hot." << std::endl;
+        std::cout << "Temperature: " << human.getTemperature() << std::endl;
         sleep(human);
     }
 }
@@ -44,8 +81,8 @@ int main()
     Human human;
     std::cout << "Human creation" << std::endl << human;
 
-    // Check if human is tired
-    humanIsTired(human);
+    // Check human tiredness
+    checkHumanTiredness(human);
 
     return 0;
 }
