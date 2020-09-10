@@ -10,6 +10,11 @@ class Human
 		int m_tiredness;
 		int m_temperature;
 
+		int life_max = 100;
+		int hunger_max = 10;
+		int thirsty_max = 10;
+		int tiredness_max = 10;
+
 	public:
 		Human();
 		~Human();
@@ -24,4 +29,14 @@ class Human
 		void setThirsty(int thirsty);
 		void setTiredness(int tiredness);
 		void setTemperature(int temperature);
+		void addLife(int life);
+		void addHunger(int hunger);
+		void addThirsty(int thirsty);
+		void addTiredness(int tiredness);
+		void addTemperature(int temperature);
+		void removeLife(int life);
+		void removeHunger(int hunger);
+		void removeThirsty(int thirsty);
+		void removeTiredness(int tiredness);
+		void removeTemperature(int temperature);
 };
