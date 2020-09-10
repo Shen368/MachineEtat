@@ -10,6 +10,13 @@ Human::Human() {
 
 Human::~Human() {}
 
+Human::Human(bool CheckAlive, bool CheckHunger, bool CheckThirsty, bool CheckFood) {
+	 m_life = CheckAlive;
+	 m_hunger = CheckHunger;
+	 m_thirsty = CheckThirsty;
+	 m_food = CheckFood;
+}
+
 std::ostream& operator<< (std::ostream& os, const Human& h) {
 	os << "Life: " << h.m_life << std::endl;
 	os << "Hunger: " << h.m_hunger << std::endl;

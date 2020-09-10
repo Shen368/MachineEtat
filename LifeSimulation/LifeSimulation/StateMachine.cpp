@@ -37,7 +37,7 @@ void StateMachine::ProcessState() {
 
 	for (;;) {
 		if (output != "dead") {
-			cout << "GameState Day :" << m_jack.isAlive << endl;
+			cout << "GameState Day :" << m_jack.CheckAlive << endl;
 			m_currentState->Process();
 			checkTransition(m_jack);
 		}

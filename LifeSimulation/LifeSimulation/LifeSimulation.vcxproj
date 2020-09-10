@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Action.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="LifeSimulation.cpp" />
     <ClCompile Include="StateMachine.cpp" />
@@ -147,7 +146,6 @@
     <ClCompile Include="Transition.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Action.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="States.h" />
