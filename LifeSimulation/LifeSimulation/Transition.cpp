@@ -1,7 +1,46 @@
 #include "Transition.h"
 
 Transition::Transition() {
+
+
 }
+
+
+void Transition::checkHumanHunger(Human& human)
+{
+    if (human.getHunger() < 10)
+    {
+        std::cout << "Human is hunger." << std::endl;
+        std::cout << "Hunger: " << human.getHunger() << std::endl;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //void Transition::checkHumanTiredness(Human& human) {
 //    if (human.getTiredness() < TirednessAlert)
@@ -29,6 +68,3 @@ Transition::Transition() {
 //        return false;
 //    }
 //}
-
-void Transition::AddTransition(Transition& transi, States& EndStat) {
-}

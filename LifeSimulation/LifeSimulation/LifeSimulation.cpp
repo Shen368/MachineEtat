@@ -7,6 +7,58 @@
 #include "Transition.h"
 #include "States.h"
 
+void CreateStateMachine() {
+
+    States* start = new States();
+    States* end = new States();
+    Transition* transition = new Transition();
+    start->AddTransition(transition, end);
+}
+
+
+int main()
+{
+    CreateStateMachine();
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 // sleep_for, sleep_until
 using namespace std::this_thread;
 // nanoseconds, system_clock, seconds
@@ -78,24 +130,4 @@ void checkHumanTemperature(Human& human)
         sleep(human);
     }
 }
-
-int main()
-{
-    try
-    {
-        // Init human
-        Human human;
-        std::cout << "Human creation" << std::endl << human;
-
-        Transition transition;
-
-        // Check human tiredness
-        transition.checkHumanTiredness(human);
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-
-    return 0;
-}
+*/

@@ -7,15 +7,12 @@ StateMachine::~StateMachine() {
 	delete m_state;
 }
 
-void StateMachine::CreateStateMachine(){
-
-	States* start = new States("Start State");
-	States* end = new States("End State");
-	Transition* transition = new Tansition();
-	start->AddTransition(transition, end);
-}
-
 void StateMachine::ProcessState() {
+	States* currentState = m_currentState;
+	for (int i = 0; i < currentState->TransitionList.size(); ++i) {
+		if(currentState->m_transition[i])
+			ChangeState(currentState->)
+	}
 }
 
 
