@@ -18,14 +18,12 @@ void CreateStateMachine() {
 
 void Goap() {
     std::vector<Action*> actions;
-    Action* target;
     Action* tempAction;
 
     // Target
     Action* MangerPomme = new Action("Manger une pomme");
     MangerPomme->AddEffect("Effet faim +1");
     MangerPomme->AddPrecondition("Avoir une pomme disponible");
-    target = MangerPomme;
 
     // Branch 1
     Action* PrendrePomme = new Action("Prendre une pomme", 0);
@@ -48,7 +46,7 @@ void Goap() {
     actions.push_back(RecupererArgent);
 
     for (Action* act : actions) {
-        if (target->GetPrecondition() == act->GetEffect())
+        if (MangerPomme->GetPrecondition() == act->GetEffect())
         {
             if (act->GetCost() < tempAction->GetCost())
             {
