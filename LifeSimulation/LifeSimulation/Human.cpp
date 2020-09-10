@@ -1,11 +1,11 @@
 #include "Human.h"
 
 Human::Human() {
-	m_life = 100;
-	m_hunger = 10;
-	m_thirsty = 10;
-	m_tiredness = 10;
-	m_temperature = 20;
+	m_life = life_max;
+	m_hunger = hunger_max;
+	m_thirsty = thirsty_max;
+	m_tiredness = tiredness_max;
+	m_temperature = 37;
 }
 
 Human::~Human(){}
@@ -42,40 +42,36 @@ int Human::getTemperature() {
 
 void Human::setLife(int life) {
 	m_life += life;
-	if (m_life > 100)
+	if (m_life > life_max)
 	{
-		m_life = 100;
+		m_life = life_max;
 	}
 }
 
 void Human::setHunger(int hunger) {
 	m_hunger += hunger;
-	if (hunger > 10)
+	if (hunger > hunger_max)
 	{
-		hunger = 10;
+		hunger = hunger_max;
 	}
 }
 
 void Human::setThirsty(int thirsty) {
 	m_thirsty += thirsty;
-	if (thirsty > 10)
+	if (thirsty > thirsty_max)
 	{
-		thirsty = 10;
+		thirsty = thirsty_max;
 	}
 }
 
 void Human::setTiredness(int tiredness) {
 	m_tiredness += tiredness;
-	if (tiredness > 10)
+	if (tiredness > tiredness_max)
 	{
-		tiredness = 10;
+		tiredness = tiredness_max;
 	}
 }
 
 void Human::setTemperature(int temperature) {
 	m_temperature += temperature;
-	if (temperature > 20)
-	{
-		temperature = 20;
-	}
 }

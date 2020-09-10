@@ -10,6 +10,11 @@ class Human
 		int m_tiredness;
 		int m_temperature;
 
+		int life_max = 100;
+		int hunger_max = 10;
+		int thirsty_max = 10;
+		int tiredness_max = 10;
+
 	public:
 		Human();
 		~Human();
