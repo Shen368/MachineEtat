@@ -1,10 +1,10 @@
 #include "Human.h"
 
 Human::Human() {
-	m_life = life_max;
-	m_hunger = hunger_max;
-	m_thirsty = thirsty_max;
-	m_tiredness = tiredness_max;
+	m_life = m_life_max;
+	m_hunger = m_hunger_max;
+	m_thirsty = m_thirsty_max;
+	m_tiredness = m_tiredness_max;
 	m_temperature = 37;
 }
 
@@ -47,31 +47,35 @@ int Human::GetTemperature() {
 	return m_temperature;
 }
 
+bool Human::GetAlive() {
+	return m_alive;
+}
+
 void Human::SetLife(int life) {
 	m_life = life;
-	if (m_life > life_max) {
-		m_life = life_max;
+	if (m_life > m_life_max) {
+		m_life = m_life_max;
 	}
 }
 
 void Human::SetHunger(int hunger) {
 	m_hunger = hunger;
-	if (hunger > hunger_max) {
-		hunger = hunger_max;
+	if (hunger > m_hunger_max) {
+		hunger = m_hunger_max;
 	}
 }
 
 void Human::SetThirsty(int thirsty) {
 	m_thirsty = thirsty;
-	if (thirsty > thirsty_max) {
-		thirsty = thirsty_max;
+	if (thirsty > m_thirsty_max) {
+		thirsty = m_thirsty_max;
 	}
 }
 
 void Human::SetTiredness(int tiredness) {
 	m_tiredness = tiredness;
-	if (tiredness > tiredness_max) {
-		tiredness = tiredness_max;
+	if (tiredness > m_tiredness_max) {
+		tiredness = m_tiredness_max;
 	}
 }
 
@@ -79,31 +83,35 @@ void Human::SetTemperature(int temperature) {
 	m_temperature = temperature;
 }
 
+void Human::SetAlive(bool alive) {
+	m_alive = alive;
+}
+
 void Human::AddLife(int life) {
 	m_life += life;
-	if (m_life > life_max) {
-		m_life = life_max;
+	if (m_life > m_life_max) {
+		m_life = m_life_max;
 	}
 }
 
 void Human::AddHunger(int hunger) {
 	m_hunger += hunger;
-	if (hunger > hunger_max) {
-		hunger = hunger_max;
+	if (hunger > m_hunger_max) {
+		hunger = m_hunger_max;
 	}
 }
 
 void Human::AddThirsty(int thirsty) {
 	m_thirsty += thirsty;
-	if (thirsty > thirsty_max) {
-		thirsty = thirsty_max;
+	if (thirsty > m_thirsty_max) {
+		thirsty = m_thirsty_max;
 	}
 }
 
 void Human::AddTiredness(int tiredness) {
 	m_tiredness += tiredness;
-	if (tiredness > tiredness_max) {
-		tiredness = tiredness_max;
+	if (tiredness > m_tiredness_max) {
+		tiredness = m_tiredness_max;
 	}
 }
 
@@ -113,29 +121,29 @@ void Human::AddTemperature(int temperature) {
 
 void Human::RemoveLife(int life) {
 	m_life -= life;
-	if (m_life > life_max) {
-		m_life = life_max;
+	if (m_life > m_life_max) {
+		m_life = m_life_max;
 	}
 }
 
 void Human::RemoveHunger(int hunger) {
 	m_hunger -= hunger;
-	if (hunger > hunger_max) {
-		hunger = hunger_max;
+	if (hunger > m_hunger_max) {
+		hunger = m_hunger_max;
 	}
 }
 
 void Human::RemoveThirsty(int thirsty) {
 	m_thirsty -= thirsty;
-	if (thirsty > thirsty_max) {
-		thirsty = thirsty_max;
+	if (thirsty > m_thirsty_max) {
+		thirsty = m_thirsty_max;
 	}
 }
 
 void Human::RemoveTiredness(int tiredness) {
 	m_tiredness -= tiredness;
-	if (tiredness > tiredness_max) {
-		tiredness = tiredness_max;
+	if (tiredness > m_tiredness_max) {
+		tiredness = m_tiredness_max;
 	}
 }
 
