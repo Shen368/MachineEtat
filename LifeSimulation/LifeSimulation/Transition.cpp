@@ -1,7 +1,6 @@
 #include "Transition.h"
 
-Transition::Transition() {
-}
+Transition::Transition() {}
 
 void Transition::checkHumanHunger(Human& human)
 {
@@ -11,28 +10,6 @@ void Transition::checkHumanHunger(Human& human)
         std::cout << "Hunger: " << human.getHunger() << std::endl;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

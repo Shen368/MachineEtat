@@ -1,7 +1,6 @@
 #include "States.h"
 
-States::States() {
-}
+States::States() {}
 
 void States::AddTransition(Transition* transi, States* EndStat) {
 	m_TransitionList.push_back(transi);
@@ -14,29 +13,6 @@ void States::Process(unsigned int quandtity) {
 void Manger::Process(unsigned int quandtity) {
 	cout << "Eating food" << endl;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
