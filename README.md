@@ -1,4 +1,4 @@
 # MachineEtat
-LifeSimulation -> State Machine
+LifeSimulation Folder -> State Machine Project
 
-Goap -> Goap
+Goap Folder -> Goap Project
