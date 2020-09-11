@@ -19,11 +19,11 @@ const vector<Transition>&  States::getTransition() {
 }
 
 void States::AddToCantAccesList(States* states) {
-	m_StateFinish.push_back((states));
+	m_CantAccesStatList.push_back((states));
 }
 
 const vector<States*>& States::getCantAccesList() {
-	return m_StateFinish;
+	return m_CantAccesStatList;
 }
 /*
 void States::setCantAccesList(vector<States*>& NextStateFinish) {

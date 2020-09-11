@@ -6,7 +6,7 @@ Transition::Transition(const std::function<bool()> nextControle) {
 	this->m_Controle = nextControle;
 }
 
-const function<bool()> Transition::getControle()
+const std::function<bool()> Transition::getControle()
 {
 	
 	return this->m_Controle;

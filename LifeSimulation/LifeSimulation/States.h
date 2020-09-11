@@ -1,19 +1,18 @@
 #pragma once
-#include <exception>
-#include <stdexcept>
-#include <chrono>
-#include <thread>
 
-#include "Human.h"
-#include "StateMachine.h"
-#include "States.h"
+#include <string>
+#include <vector>
+#include <iostream>
+
 #include "Transition.h"
+
+using namespace std;
 
 class States
 {
 private:
 	vector<Transition> m_TransitionList;
-	vector<States*> m_StateFinish;
+	vector<States*> m_CantAccesStatList;
 	const char* m_TextOutPut;
 
 public:
@@ -23,14 +22,14 @@ public:
 	//Transition
 	void AddTransition(Transition transi);
 	const vector<Transition>& getTransition();
-	void setTransition(vector<Transition> ListTrans);
+	//void setTransition(vector<Transition> ListTrans);
 
 
-	//Finished
+	//AccesList
 	void AddToCantAccesList(const States states);
 	void AddToCantAccesList(States* states);
 	const vector<States*>& getCantAccesList();
-	void setCantAccesList(vector<States*>& NextStateFinish);
+	//void setCantAccesList(vector<States*>& NextStateFinish);
 
 	// current Action
 	void Process();

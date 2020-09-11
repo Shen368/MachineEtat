@@ -22,13 +22,10 @@ void StateMachine::checkTransition(const Human* jack) {
 		Transition currentTransition = m_currentState->getTransition()[i];
 		if (currentTransition.getControle())
 		{
-			m_currentState = m_currentState->getStateFinish()[i];
+			m_currentState = m_currentState->getCantAccesList()[i];
 			break;
 		}
 	}
-}
-void StateMachine::ProcessState() {
-
 }
 
 void StateMachine::ProcessState() {

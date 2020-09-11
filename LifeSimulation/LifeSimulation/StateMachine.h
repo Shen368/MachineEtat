@@ -1,24 +1,22 @@
 #pragma once
-#include<vector>
-#include<iostream>
-
 #include "States.h"
-#include "Transition.h"
 #include "Human.h"
 
 using namespace std;
 
+
 class StateMachine
 {
 	private:
+		vector<States*> m_StatesList;
 		const States* m_state;
 		States* m_currentState;
 		Human* m_jack;
-		vector<States*> m_StatesList;
+
 
 
 	public:
-		StateMachine();
+		//StateMachine();
 		StateMachine(States* Start, Human* jack);
 
 		vector<States*>& getAllStates();
