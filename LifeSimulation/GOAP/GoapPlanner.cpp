@@ -72,18 +72,4 @@ std::vector<Action*> GoapPlanner::CreateAllActions() {
 	return allActions;
 }
 
-void GoapPlanner::CreatePlanner() {
-	allActions.reserve(3);
-
-	Action* MangerPomme = new Action("Manger une pomme");
-	Action* MangerNugget = new Action("Manger des nuggets");
-	Action* BoireSoda = new Action("Boire un soda");
-	Action* AcheterLivre = new Action("Acheter un livre");
-
-	allActions.push_back(MangerPomme);
-	allActions.push_back(MangerNugget);
-	allActions.push_back(BoireSoda);
-	allActions.push_back(AcheterLivre);
-}
-
 void GoapPlanner::Solve() {}

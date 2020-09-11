@@ -20,6 +20,5 @@ public:
 	Action* CreateGoalAction();
 	std::vector<Action*> CreateAllActions();
 
-	void CreatePlanner();
 	void Solve();
 };
