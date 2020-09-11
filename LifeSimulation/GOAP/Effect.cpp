@@ -2,16 +2,13 @@
 
 Effect::Effect() {
 	m_name = WorldState::EPEE;
-	addRessource = [](GameManager* gameManager) {};
 }
 
-Effect::Effect(WorldState name, void(*ressource)(GameManager* gameManager)) {
+Effect::Effect(WorldState name) {
 	m_name = name;
-	addRessource = ressource;
 }
 
 Effect::~Effect() {}
 
-void Effect::ProcessAction(GameManager* gameManager) {
-	addRessource(gameManager);
+void Effect::ProcessAction() {
 }
