@@ -14,5 +14,4 @@ WorldState Precondition::GetName() {
     return m_name;
 }
 
-bool Precondition::Process() {
-}
+bool Precondition::Process() {}

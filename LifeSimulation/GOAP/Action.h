@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 
-enum WorldState {
+enum class WorldState {
     EPEE,
     FORGERON,
     FER,

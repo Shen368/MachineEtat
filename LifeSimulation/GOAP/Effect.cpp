@@ -10,5 +10,4 @@ Effect::Effect(WorldState name) {
 
 Effect::~Effect() {}
 
-void Effect::ProcessAction() {
-}
+void Effect::ProcessAction() {}
