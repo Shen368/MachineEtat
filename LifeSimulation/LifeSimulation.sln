@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LifeSimulation", "LifeSimulation\LifeSimulation.vcxproj", "{22384DFF-A384-4413-8387-B6778159F4DC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GOAP", "GOAP\GOAP.vcxproj", "{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{22384DFF-A384-4413-8387-B6778159F4DC}.Release|x64.Build.0 = Release|x64
 		{22384DFF-A384-4413-8387-B6778159F4DC}.Release|x86.ActiveCfg = Release|Win32
 		{22384DFF-A384-4413-8387-B6778159F4DC}.Release|x86.Build.0 = Release|Win32
+		{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}.Debug|x64.ActiveCfg = Debug|x64
+		{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}.Debug|x64.Build.0 = Debug|x64
+		{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}.Debug|x86.ActiveCfg = Debug|Win32
+		{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}.Debug|x86.Build.0 = Debug|Win32
+		{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}.Release|x64.ActiveCfg = Release|x64
+		{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}.Release|x64.Build.0 = Release|x64
+		{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}.Release|x86.ActiveCfg = Release|Win32
+		{5BD6BB75-F19B-45DC-9D2F-0AE3E393DF2D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
