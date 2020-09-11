@@ -19,22 +19,22 @@ int Action::GetCost() {
     return m_cost;
 }
 
-std::vector<std::string> Action::GetPreconditions() {
+std::vector<WorldState> Action::GetPreconditions() {
     return m_preconditions;
 }
 
-std::string Action::GetEffect() {
-    return m_effect;
+std::vector<WorldState> Action::GetEffect() {
+    return m_effects;
 }
 
 void Action::SetCost(int cost) {
     m_cost = cost;
 }
 
-void Action::AddPrecondition(std::string name) {
+void Action::AddPrecondition(WorldState name) {
     m_preconditions.push_back(name);
 }
 
-void Action::AddEffect(std::string name) {
-    m_effect = name;
+void Action::AddEffect(WorldState name) {
+    m_effects.push_back(name);
 }

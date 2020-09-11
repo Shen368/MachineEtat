@@ -54,47 +54,29 @@ std::ostream& operator<< (std::ostream& os, const GoapPlanner& gp) {
 }
 
 Action* GoapPlanner::CreateGoalAction() {
-	Action* MangerPomme = new Action("Manger une pomme");
-	MangerPomme->AddPrecondition("Avoir une pomme disponible");
+	Action* FabriquerEpee = new Action("Fabriquer une epee");
+	FabriquerEpee->AddPrecondition(WorldState::FORGERON);
+	FabriquerEpee->AddPrecondition(WorldState::FER);
+	FabriquerEpee->AddEffect(WorldState::EPEE);
 
-	Action* MangerNugget = new Action("Manger des nuggets");
-	Action* BoireSoda = new Action("Boire un soda");
-	Action* AcheterLivre = new Action("Acheter un livre");
-
-	goalAction = MangerPomme;
+	goalAction = FabriquerEpee;
 	return goalAction;
 }
 
 std::vector<Action*> GoapPlanner::CreateAllActions() {
 	allActions.reserve(2);
 
-	Action* PrendrePomme = new Action("Prendre une pomme");
-	PrendrePomme->AddPrecondition("Avoir une pomme dans sa cuisine");
-	PrendrePomme->AddEffect("Avoir une pomme disponible");
+	Action* Miner = new Action("Miner");
+	Miner->AddPrecondition(WorldState::FORGERON);
+	Miner->AddPrecondition(WorldState::PIOCHE);
+	Miner->AddEffect(WorldState::FER);
 
-	Action* RecupererPomme = new Action("Recuperer une pomme dans sa cusine", 15);
-	RecupererPomme->AddEffect("Avoir une pomme dans sa cuisine");
+	Action* Forgeron = new Action("Avoir un forgeron");
+	Forgeron->AddPrecondition(WorldState::ARGENT);
+	Forgeron->AddEffect(WorldState::FORGERON);
 
-	Action* AcheterPomme = new Action("Acheter une pomme", 5);
-	AcheterPomme->AddPrecondition("Avoir de l argent");
-	AcheterPomme->AddEffect("Avoir une pomme disponible");
-
-	Action* PrendreSoda = new Action("Prendre un soda");
-	PrendreSoda->AddEffect("Avoir un soda disponible");
-
-	Action* AcheterSoda = new Action("Acheter un soda", 10);
-	AcheterSoda->AddPrecondition("Avoir de l argent");
-	AcheterSoda->AddEffect("Avoir un soda disponible");
-
-	/*Action* MangerNugget = new Action("Manger des nuggets");
-	Action* BoireSoda = new Action("Boire un soda");
-	Action* AcheterLivre = new Action("Acheter un livre");*/
-
-	allActions.push_back(PrendrePomme);
-	allActions.push_back(RecupererPomme);
-	allActions.push_back(AcheterPomme);
-	allActions.push_back(PrendreSoda);
-	allActions.push_back(AcheterSoda);
+	allActions.push_back(Miner);
+	allActions.push_back(Forgeron);
 
 	return allActions;
 }

@@ -3,10 +3,10 @@
 #include <vector>
 
 enum WorldState {
+    EPEE,
     FORGERON,
     FER,
     PIOCHE,
-    EPEE,
     ARGENT,
     POSITIONER
 };
@@ -17,7 +17,7 @@ private:
     std::string m_name;
     int m_cost;
     std::vector<WorldState> m_preconditions;
-    std::vector<WorldState> m_effect;
+    std::vector<WorldState> m_effects;
 
 public:
     Action();
@@ -26,11 +26,11 @@ public:
 
     std::string GetName();
     int GetCost();
-    std::vector<std::string> GetPreconditions();
-    std::string GetEffect();
+    std::vector<WorldState> GetPreconditions();
+    std::vector<WorldState> GetEffect();
 
     void SetCost(int cost);
 
-    void AddPrecondition(std::string name);
-    void AddEffect(std::string name);
+    void AddPrecondition(WorldState name);
+    void AddEffect(WorldState name);
 };
