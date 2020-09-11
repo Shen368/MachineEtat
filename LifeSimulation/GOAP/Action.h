@@ -2,13 +2,22 @@
 #include <iostream>
 #include <vector>
 
+enum WorldState {
+    FORGERON,
+    FER,
+    PIOCHE,
+    EPEE,
+    ARGENT,
+    POSITIONER
+};
+
 class Action
 {
 private:
     std::string m_name;
     int m_cost;
-    std::vector<std::string> m_preconditions;
-    std::string m_effect;
+    std::vector<WorldState> m_preconditions;
+    std::vector<WorldState> m_effect;
 
 public:
     Action();
