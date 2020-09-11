@@ -6,7 +6,7 @@ States::States(const char* TextOutPut) {
 }
 
 void States::AddTransition(Transition transi) {
-	m_TransitionList.push_back(transi);
+	m_TransitionList.push_back(transi);					//Ajouter a la Liste de mes Transition
 }
 
 const vector<Transition>&  States::getTransition() {
@@ -14,12 +14,12 @@ const vector<Transition>&  States::getTransition() {
 	return m_TransitionList;
 }
 
-void States::AddToCantAccesList(States* states) {
-	m_CantAccesStatList.push_back((states));
+void States::AddToCanAccesList(States* states) {
+	m_CanAccesStatList.push_back((states));				//Ajouter a la Liste des Stat qui peuvent qui accesible
 }
 
-const vector<States*>& States::getCantAccesList() {
-	return m_CantAccesStatList;
+const vector<States*>& States::getCanAccesList() {
+	return m_CanAccesStatList;
 }
 
 void States::Process() {

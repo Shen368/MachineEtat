@@ -9,7 +9,7 @@ using namespace std;
 class StateMachine
 {
 	private:
-		vector<States*> m_StatesList;
+		vector<States*> m_StatesList;   //Liste qui contient tout les states
 		const States* m_state;
 		States* m_currentState;
 		Human* m_jack;
@@ -17,12 +17,12 @@ class StateMachine
 
 
 	public:
-		//StateMachine();
-		StateMachine(States* Start, Human* jack);
+		
+		StateMachine(States* Start, Human* jack);	//initialiser un statemachine avec une state de depart
 
-		vector<States*>& getAllStates();
-		void AddStates(States* nextState);
-		void checkTransition(const Human* jack);
-		void ProcessState();
+		vector<States*>& getAllStates();			//Recuperer la liste avec tout mes states dedans
+		void AddStates(States* nextState);			//rajouter un nouveau stat dans ma m_StatesList
+		void checkTransition(const Human* jack);	//Faire le control sur le stat actuel
+		void ProcessState();						//Boucle qui lance la simulation de notre personnage
 
 };

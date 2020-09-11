@@ -11,9 +11,9 @@ using namespace std;
 class States
 {
 private:
-	vector<Transition> m_TransitionList;
-	vector<States*> m_CantAccesStatList;
-	const char* m_TextOutPut;
+	vector<Transition> m_TransitionList;    //Liste de Transition
+	vector<States*> m_CanAccesStatList;		//Liste des States qui peuvent etres acceder
+	const char* m_TextOutPut;				//Text visuel pour voir les etat dans la console
 
 public:
 
@@ -25,11 +25,10 @@ public:
 
 
 	//AccesList
-	void AddToCantAccesList(const States states);
-	void AddToCantAccesList(States* states);
-	const vector<States*>& getCantAccesList();
+	void AddToCanAccesList(States* states);
+	const vector<States*>& getCanAccesList();
 
-	// current Action
+	// Recupere le current Action et l'affiche
 	void Process();
 
 

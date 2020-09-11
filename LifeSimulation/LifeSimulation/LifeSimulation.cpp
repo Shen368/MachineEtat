@@ -11,10 +11,10 @@
 int main()
 {
     //My human Simulation
-    Human* jack = new Human(true, false, false, false, false,false);
+    Human* jack = new Human(true, true, false, false, false,false);
 
     //All my state
-    States* Alive = new States("Morning evereyone");
+    States* Alive = new States("Morning everyone");
     States* Hungry = new States("I'm Hungry");
     States* Food = new States("Sorry Eating food now come later");
     States* Sport = new States("Doing some Practice");
@@ -41,16 +41,7 @@ int main()
             }
         return false;
         });
-    /*
-    Transition  transDeath([&jack]() {
-        std::cout << "dead" << endl;
-        if (jack->m_alive && !jack->m_food) {
-            jack->m_alive = false;
-            return true;
-        }
-        return false;
-        });
-    */
+
     Transition  transSport([&jack]() {
         std::cout << "go to Gym" << endl;
         if (jack->m_alive && jack->m_sport) {
@@ -86,54 +77,51 @@ int main()
         return false;
         });
 
+/*---------------------------------------------------------------------------------------*/
+    //Le AddTransition(trans...)sont la pour faire le controle defini juste au dessus
+    //Le AddToCanAccesList est la avoir l'acces et passer au state suivant
 
     Alive->AddTransition(transGetFood);
     Alive->AddTransition(transEat);
     Alive->AddTransition(transSport);
     Alive->AddTransition(transTiredness);
     Alive->AddTransition(transRest);
-    //Alive->AddTransition(transDeath);
     
-    //Test diffenrent state
-    Alive->AddToCantAccesList(Hungry);
-    Alive->AddToCantAccesList(Sport);
-    Alive->AddToCantAccesList(Tired);
+    Alive->AddToCanAccesList(Hungry);
+    Alive->AddToCanAccesList(Sport);
+    Alive->AddToCanAccesList(Tired);
 
     
     Hungry->AddTransition(transEat);
-    Hungry->AddToCantAccesList(Food);
+    Hungry->AddToCanAccesList(Food);
 
     Food->AddTransition(transSport);
-    //Food->AddTransition(transDeath);
-    Food->AddToCantAccesList(Sport);
+    Food->AddToCanAccesList(Sport);
 
 
     Sport->AddTransition(transTiredness);
-    Sport->AddToCantAccesList(Tired);
+    Sport->AddToCanAccesList(Tired);
 
     Tired->AddTransition(transRest);
-    Tired->AddToCantAccesList(Sleep);
+    Tired->AddToCanAccesList(Sleep);
 
     Sleep->AddTransition(transAwake);
-    Sleep->AddToCantAccesList(Alive);
+    Sleep->AddToCanAccesList(Alive);
+
+/*---------------------------------------------------------------------------------------*/
+
+    //Je initialise mon state machine et je l'active;
+    StateMachine stateMachine(Alive, jack);                 //Ici J'ai definie l'etat "Alive" pour commencer 
+    stateMachine.ProcessState();                            //vous pouvez changer pour tester sur autre Etat Ex:"Sport"
 
 
-
-    StateMachine stateMachine(Alive, jack);
-    //stateMachine.AddStates(Sport);
-    stateMachine.ProcessState();
-
-
-    //Destructeur
+    //Je detruit les new initialiser au debut pour ne pas avoir de fuite memoire
     delete Alive;
     delete Hungry;
     delete Food;
     delete Sport;
     delete Tired;
     delete Sleep;
-
-
-
 
     return 0;
 }
