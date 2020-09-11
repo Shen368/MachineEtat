@@ -20,5 +20,6 @@ public:
 	Action* CreateGoalAction();
 	std::vector<Action*> CreateAllActions();
 
-	void Solve();
+	void Solver();
+	std::vector<Action*> GetActionsToMakeOurGoal(WorldState precondition);
 };

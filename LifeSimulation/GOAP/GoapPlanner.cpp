@@ -72,4 +72,41 @@ std::vector<Action*> GoapPlanner::CreateAllActions() {
 	return allActions;
 }
 
-void GoapPlanner::Solve() {}
+void GoapPlanner::Solver() {
+	int preconditionNumber = goalAction->GetPreconditions().size();
+	std::vector<Action*> path;
+	std::vector<Action*> bestPath;
+	int pathCost = 0;
+	int bestCost = 99;
+
+	for (int i = 0; i < preconditionNumber; ++i)
+	{
+		path.clear();
+		bestPath.clear();
+		pathCost = 0;
+		bestCost = 99;
+
+		std::vector<Action*> actions = GetActionsToMakeOurGoal(goalAction->GetPreconditions()[i]);
+		for (int j = 0; j < actions.size(); ++j)
+		{
+
+		}
+	}
+}
+
+std::vector<Action*> GoapPlanner::GetActionsToMakeOurGoal(WorldState precondition) {
+	std::vector<Action*> actions;
+
+	for (int i = 0; i < allActions.size(); ++i)
+	{
+		for (int j = 0; j < allActions[i]->GetEffect().size(); ++j)
+		{
+			if (precondition->GetName() == allActions[i]->GetEffect()[j]->GetName())
+			{
+				actions.push_back(allActions[i]);
+			}
+		}
+	}
+
+	return actions;
+}

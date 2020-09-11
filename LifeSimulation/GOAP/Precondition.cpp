@@ -10,5 +10,9 @@ Precondition::Precondition(WorldState name) {
 
 Precondition::~Precondition() {}
 
+WorldState Precondition::GetName() {
+    return m_name;
+}
+
 bool Precondition::Process() {
 }

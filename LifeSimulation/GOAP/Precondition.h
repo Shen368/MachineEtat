@@ -12,5 +12,7 @@ public :
 	Precondition(WorldState name);
 	~Precondition();
 
+	WorldState GetName();
+
 	bool Process();
 };
