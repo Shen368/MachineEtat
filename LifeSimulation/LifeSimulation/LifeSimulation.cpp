@@ -49,12 +49,12 @@ int main()
         });
 
     Hungry->AddTransition(transDrink);
-    Hungry->AddToFinishedList(Thirsty);  //AddToFinishedList is not accesible stat Liste
+    Hungry->AddToCantAccesList(Thirsty);  //AddToFinishedList is not accesible stat Liste
     Hungry->AddTransition(transEat);
-    Hungry->AddToFinishedList(Eat);
+    Hungry->AddToCantAccesList(Eat);
 
     Thirsty->AddTransition(transHungry);
-    Thirsty->AddToFinishedList(Hungry);
+    Thirsty->AddToCantAccesList(Hungry);
 
     StateMachine stateMachine(Hungry, jack);
     stateMachine.AddStates(Thirsty);

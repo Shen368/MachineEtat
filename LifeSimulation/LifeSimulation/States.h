@@ -4,9 +4,10 @@
 #include <chrono>
 #include <thread>
 
-//#include "Human.h"
+#include "Human.h"
 #include "StateMachine.h"
-
+#include "States.h"
+#include "Transition.h"
 
 class States
 {
@@ -21,15 +22,15 @@ public:
 
 	//Transition
 	void AddTransition(Transition transi);
-	void setTransition(vector<Transition> ListTrans);
 	const vector<Transition>& getTransition();
+	void setTransition(vector<Transition> ListTrans);
 
-	//
-	void AddToFinishedList(States* states);
 
-	// get / set m_StateFinish
-	const vector<States*>& getStateFinish();
-	void setStateFinish(vector<States*>& NextStateFinish);
+	//Finished
+	void AddToCantAccesList(const States states);
+	void AddToCantAccesList(States* states);
+	const vector<States*>& getCantAccesList();
+	void setCantAccesList(vector<States*>& NextStateFinish);
 
 	// current Action
 	void Process();
