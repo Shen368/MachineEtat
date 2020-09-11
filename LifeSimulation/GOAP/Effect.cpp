@@ -1,11 +1,11 @@
 #include "Effect.h"
 
 Effect::Effect() {
-	m_name = "";
+	m_name = WorldState::EPEE;
 	addRessource = [](GameManager* gameManager) {};
 }
 
-Effect::Effect(std::string name, void(*ressource)(GameManager* gameManager)) {
+Effect::Effect(WorldState name, void(*ressource)(GameManager* gameManager)) {
 	m_name = name;
 	addRessource = ressource;
 }

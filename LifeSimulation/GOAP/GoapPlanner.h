@@ -15,8 +15,7 @@ public:
 	std::vector<Action*> GetAllActions();
 	Action* GetGoalAction();
 
-	//std::vector<Action*> displayAllActions();
-	friend std::ostream& operator<< (std::ostream&, const GoapPlanner&);
+	//friend std::ostream& operator<< (std::ostream&, const GoapPlanner&);
 
 	Action* CreateGoalAction();
 	std::vector<Action*> CreateAllActions();

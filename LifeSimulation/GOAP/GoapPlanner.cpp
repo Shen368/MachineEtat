@@ -27,31 +27,22 @@ Action* GoapPlanner::GetGoalAction() {
 	return goalAction;
 }
 
-//std::vector<Action*> GoapPlanner::displayAllActions() {
-//	int N = allActions.size();
+//std::ostream& operator<< (std::ostream& os, const GoapPlanner& gp) {
+//	int N = gp.allActions.size();
 //
 //	for (int i = 0; i < N; ++i)
 //	{
-//		std::cout << allActions[i];
+//		os << "Nom : " << gp.allActions[i]->GetName() << std::endl;
+//		os << "Cout : " << gp.allActions[i]->GetCost() << std::endl;
+//		int P = gp.allActions[i]->GetPreconditions().size();
+//		for (int j = 0; j < P; ++j) {
+//			os << "Precondition : " << gp.allActions[i]->GetPreconditions().at(j) << std::endl;
+//		}
+//		os << "Effet : " << gp.allActions[i]->GetEffect() << std::endl;
+//		os << "------------------------------" << std::endl;
 //	}
+//	return os;
 //}
-
-std::ostream& operator<< (std::ostream& os, const GoapPlanner& gp) {
-	int N = gp.allActions.size();
-
-	for (int i = 0; i < N; ++i)
-	{
-		os << "Nom : " << gp.allActions[i]->GetName() << std::endl;
-		os << "Cout : " << gp.allActions[i]->GetCost() << std::endl;
-		int P = gp.allActions[i]->GetPreconditions().size();
-		for (int j = 0; j < P; ++j) {
-			os << "Precondition : " << gp.allActions[i]->GetPreconditions().at(j) << std::endl;
-		}
-		os << "Effet : " << gp.allActions[i]->GetEffect() << std::endl;
-		os << "------------------------------" << std::endl;
-	}
-	return os;
-}
 
 Action* GoapPlanner::CreateGoalAction() {
 	Action* FabriquerEpee = new Action("Fabriquer une epee");

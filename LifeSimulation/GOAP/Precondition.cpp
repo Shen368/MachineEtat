@@ -1,13 +1,13 @@
 #include "Precondition.h"
 
 Precondition::Precondition() {
-    m_name = "";
+    m_name = WorldState::EPEE;
     m_condition = [](GameManager* gameManager) {
         return true;
     };
 }
 
-Precondition::Precondition(std::string name, bool(*condition)(GameManager*)) {
+Precondition::Precondition(WorldState name, bool(*condition)(GameManager*)) {
     m_name = name;
     m_condition = condition;
 }
