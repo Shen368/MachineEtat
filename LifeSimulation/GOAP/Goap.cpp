@@ -3,7 +3,6 @@
 #include <thread>
 #include <vector>
 
-#include "Human.h"
 #include "Action.h"
 #include "GoapPlanner.h"
 

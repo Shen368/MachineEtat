@@ -146,7 +146,6 @@
     <ClCompile Include="GoapPlanner.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="Precondition.cpp" />
-    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
@@ -155,7 +154,6 @@
     <ClInclude Include="GoapPlanner.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="Precondition.h" />
-    <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
