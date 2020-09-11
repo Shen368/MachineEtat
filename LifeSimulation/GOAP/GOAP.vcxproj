@@ -144,7 +144,6 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GOAP.cpp" />
     <ClCompile Include="GoapPlanner.cpp" />
-    <ClCompile Include="Human.cpp" />
     <ClCompile Include="Precondition.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,7 +151,6 @@
     <ClInclude Include="Effect.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GoapPlanner.h" />
-    <ClInclude Include="Human.h" />
     <ClInclude Include="Precondition.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
