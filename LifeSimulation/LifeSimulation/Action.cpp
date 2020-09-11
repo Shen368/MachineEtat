@@ -27,6 +27,10 @@ std::string Action::GetEffect() {
     return m_effect;
 }
 
+void Action::SetCost(int cost) {
+    m_cost = cost;
+}
+
 void Action::AddPrecondition(std::string name) {
     m_preconditions.push_back(name);
 }

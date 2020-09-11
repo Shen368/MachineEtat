@@ -20,6 +20,8 @@ public:
     std::vector<std::string> GetPreconditions();
     std::string GetEffect();
 
+    void SetCost(int cost);
+
     void AddPrecondition(std::string name);
     void AddEffect(std::string name);
 };

@@ -12,6 +12,15 @@ public:
 	GoapPlanner(Action* goal);
 	~GoapPlanner();
 
-	void CreateSolver();
+	std::vector<Action*> GetAllActions();
+	Action* GetGoalAction();
+
+	//std::vector<Action*> displayAllActions();
+	friend std::ostream& operator<< (std::ostream&, const GoapPlanner&);
+
+	Action* CreateGoalAction();
+	std::vector<Action*> CreateAllActions();
+
+	void CreatePlanner();
 	void Solve();
 };
