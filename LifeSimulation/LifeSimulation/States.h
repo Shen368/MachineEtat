@@ -22,14 +22,12 @@ public:
 	//Transition
 	void AddTransition(Transition transi);
 	const vector<Transition>& getTransition();
-	//void setTransition(vector<Transition> ListTrans);
 
 
 	//AccesList
 	void AddToCantAccesList(const States states);
 	void AddToCantAccesList(States* states);
 	const vector<States*>& getCantAccesList();
-	//void setCantAccesList(vector<States*>& NextStateFinish);
 
 	// current Action
 	void Process();
