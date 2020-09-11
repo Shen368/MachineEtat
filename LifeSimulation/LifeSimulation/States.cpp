@@ -8,11 +8,7 @@ States::States(const char* TextOutPut) {
 void States::AddTransition(Transition transi) {
 	m_TransitionList.push_back(transi);
 }
-/*
-void States::setTransition(vector<Transition> ListTrans) {
-	m_TransitionList = ListTrans;
-}
-*/
+
 const vector<Transition>&  States::getTransition() {
 
 	return m_TransitionList;
@@ -25,11 +21,8 @@ void States::AddToCantAccesList(States* states) {
 const vector<States*>& States::getCantAccesList() {
 	return m_CantAccesStatList;
 }
-/*
-void States::setCantAccesList(vector<States*>& NextStateFinish) {
-	m_StateFinish = NextStateFinish;
-}
-*/
+
 void States::Process() {
+	Sleep(2000);
 	cout <<"Action_Message : "<< m_TextOutPut << endl;
 }

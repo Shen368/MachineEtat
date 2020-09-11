@@ -30,12 +30,14 @@ void StateMachine::checkTransition(const Human* jack) {
 
 void StateMachine::ProcessState() {
 
-	char* output = nullptr;
-
-	while (output != "dead") {
-		cout << "GameState Day :" << m_jack->m_life << endl;
+	while (m_jack->m_alive) {
+		cout << "I'm Still Alive Yeah!" << endl;
 		m_currentState->Process();
 		checkTransition(m_jack);
+		Sleep(2000);
+	}
+	if (!m_jack->m_alive) {
+		cout << "I'm dying NOOOOOOOOOoooooooo" << endl;
 	}
 }
 

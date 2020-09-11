@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
-
+#include "windows.h"
 #include "Transition.h"
 
 using namespace std;

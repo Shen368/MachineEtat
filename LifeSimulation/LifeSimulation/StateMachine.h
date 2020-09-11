@@ -1,6 +1,7 @@
 #pragma once
 #include "States.h"
 #include "Human.h"
+#include "windows.h"
 
 using namespace std;
 

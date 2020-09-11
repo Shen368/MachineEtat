@@ -5,46 +5,22 @@ class Human
 {
 	private:
 
-		int m_tiredness;
-		int m_temperature;
-		bool m_alive;
-
-		int m_life_max = 20;
-		int m_hunger_max = 10;
-		int m_thirsty_max = 10;
-		int m_tiredness_max = 10;
+		bool m_life;
+		bool m_thirsty;
 
 	public:
 
-		bool m_life;
+		bool m_alive;
 		bool m_hunger;
-		bool m_thirsty;
+		bool m_sport;
 		bool m_food;
+		bool m_tiredness;
+		bool m_Sleep;
+
 
 		Human();
 		~Human();
-		Human(bool isAlive, bool isHungry,  bool isThirsty,bool haveFood );
+		Human(bool isAlive, bool isHungry, bool haveFood, bool doSport, bool isTired, bool isSleep);
 		friend std::ostream& operator<< (std::ostream&, const Human&);
-		int GetLife();
-		int GetHunger();
-		int GetThirsty();
-		int GetTiredness();
-		int GetTemperature();
-		bool GetAlive();
-		void SetLife(int life);
-		void SetHunger(int hunger);
-		void SetThirsty(int thirsty);
-		void SetTiredness(int tiredness);
-		void SetTemperature(int temperature);
-		void SetAlive(bool alive);
-		void AddLife(int life);
-		void AddHunger(int hunger);
-		void AddThirsty(int thirsty);
-		void AddTiredness(int tiredness);
-		void AddTemperature(int temperature);
-		void RemoveLife(int life);
-		void RemoveHunger(int hunger);
-		void RemoveThirsty(int thirsty);
-		void RemoveTiredness(int tiredness);
-		void RemoveTemperature(int temperature);
+
 };

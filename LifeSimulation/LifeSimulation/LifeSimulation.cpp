@@ -7,146 +7,134 @@
 #include "Transition.h"
 #include "States.h"
 
-/*
-void CreateStateMachine() {
-
-    States* start = new States();
-    States* end = new States();
-    Transition* transition = new Transition();
-    start->AddTransition(transition, end);
-}
-*/
 
 int main()
 {
-    Human* jack = new Human(true, true, false, false);
+    //My human Simulation
+    Human* jack = new Human(true, false, false, false, false,false);
 
+    //All my state
+    States* Alive = new States("Morning evereyone");
     States* Hungry = new States("I'm Hungry");
-    States* Eat = new States("Sorry Eating food now come later");
-    States* Thirsty = new States("I'm Thirsty");
+    States* Food = new States("Sorry Eating food now come later");
+    States* Sport = new States("Doing some Practice");
+    States* Tired = new States("Oh I really need some rest");
+    States* Sleep = new States("Sleeping zzzzzz");
 
-    Transition  transHungry([&jack]() {
+
+    //All Condition for transition to another state
+    Transition  transGetFood([&jack]() {
         cout << "GettingFood" << endl;
-        if ( jack->m_life && jack->m_hunger) return true;
+        if (jack->m_alive && jack->m_hunger && !jack->m_Sleep) {
+            jack->m_hunger = false;
+            return true;
+        }
         return false;
         });
 
     Transition  transEat([&jack]() {
-        std::cout << "Eating food" << endl;
-        if (jack->m_life && jack->m_hunger &&jack->m_food) {
+        std::cout << "Lets go eat" << endl;
+        if (jack->m_alive && jack->m_food) {
             jack->m_food = false;
+            jack->m_sport = true;
+            return true;
             }
         return false;
         });
-
-    Transition transDrink([&jack]() {
-        std::cout << "Do we have any water?" << endl;
-        if (jack->m_life && jack->m_thirsty && jack->m_food) {
-            jack->m_thirsty = false;
-            jack->m_food = false;
-         }
+    /*
+    Transition  transDeath([&jack]() {
+        std::cout << "dead" << endl;
+        if (jack->m_alive && !jack->m_food) {
+            jack->m_alive = false;
+            return true;
+        }
+        return false;
+        });
+    */
+    Transition  transSport([&jack]() {
+        std::cout << "go to Gym" << endl;
+        if (jack->m_alive && jack->m_sport) {
+            jack->m_sport = false;
+            jack->m_tiredness = true;
+        }
         return false;
         });
 
-    Hungry->AddTransition(transDrink);
-    Hungry->AddToCantAccesList(Thirsty);  //AddToFinishedList is not accesible stat Liste
+    Transition  transTiredness([&jack]() {
+        std::cout << "Get Tired" << endl;
+        if (jack->m_alive && jack->m_tiredness) {
+            jack->m_Sleep = true;
+            return true;
+        }
+        return false;
+        });
+
+    Transition  transRest([&jack]() {
+        std::cout << "go to bed" << endl;
+        if (jack->m_alive && jack->m_tiredness) {
+            jack->m_tiredness = false;
+            jack->m_Sleep = true;
+        }
+        return false;
+        });
+
+    Transition  transAwake([&jack]() {
+        std::cout << "Wakeup still Alive" << endl;
+        if (jack->m_alive) {
+            return true;
+        }
+        return false;
+        });
+
+
+    Alive->AddTransition(transGetFood);
+    Alive->AddTransition(transEat);
+    Alive->AddTransition(transSport);
+    Alive->AddTransition(transTiredness);
+    Alive->AddTransition(transRest);
+    //Alive->AddTransition(transDeath);
+    
+    //Test diffenrent state
+    Alive->AddToCantAccesList(Hungry);
+    Alive->AddToCantAccesList(Sport);
+    Alive->AddToCantAccesList(Tired);
+
+    
     Hungry->AddTransition(transEat);
-    Hungry->AddToCantAccesList(Eat);
+    Hungry->AddToCantAccesList(Food);
 
-    Thirsty->AddTransition(transHungry);
-    Thirsty->AddToCantAccesList(Hungry);
+    Food->AddTransition(transSport);
+    //Food->AddTransition(transDeath);
+    Food->AddToCantAccesList(Sport);
 
-    StateMachine stateMachine(Hungry, jack);
-    stateMachine.AddStates(Thirsty);
-    stateMachine.AddStates(Eat);
+
+    Sport->AddTransition(transTiredness);
+    Sport->AddToCantAccesList(Tired);
+
+    Tired->AddTransition(transRest);
+    Tired->AddToCantAccesList(Sleep);
+
+    Sleep->AddTransition(transAwake);
+    Sleep->AddToCantAccesList(Alive);
+
+
+
+    StateMachine stateMachine(Alive, jack);
+    //stateMachine.AddStates(Sport);
     stateMachine.ProcessState();
 
-    delete jack;
+
+    //Destructeur
+    delete Alive;
     delete Hungry;
-    delete Eat;
-    delete Thirsty;
+    delete Food;
+    delete Sport;
+    delete Tired;
+    delete Sleep;
+
+
+
 
     return 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//using namespace std::this_thread;
-//using namespace std::chrono;
-//
-//int TirednessAlert = 12;
-//int TirednessLimit = 20;
-//
-//void sleep(Human& human)
-//{
-//    std::cout << "Enter in sleep state." << std::endl;
-//    std::cout << "Human need to sleep." << std::endl;
-//    while (human.getTiredness() < TirednessLimit)
-//    {
-//        sleep_for(2s);
-//        human.addTiredness(2);
-//        std::cout << "Tiredness: " << human.getTiredness() << std::endl;
-//    }
-//    std::cout << "Human isn't tired anymore." << std::endl;
-//    std::cout << "Exit sleep state." << std::endl;
-//}
-//
-//void checkHumanTiredness(Human& human)
-//{
-//    if (human.getTiredness() < TirednessAlert)
-//    {
-//        std::cout << "Human is tired." << std::endl;
-//        std::cout << "Tiredness: " << human.getTiredness() << std::endl;
-//        sleep(human);
-//    }
-//}
-//
-//void checkHumanHunger(Human& human)
-//{
-//    if (human.getHunger() < 10)
-//    {
-//        std::cout << "Human is hunger." << std::endl;
-//        std::cout << "Hunger: " << human.getHunger() << std::endl;
-//    }
-//}
-//
-//void checkHumanThirsty(Human& human)
-//{
-//    if (human.getThirsty() < 10)
-//    {
-//        std::cout << "Human is thirsty." << std::endl;
-//        std::cout << "Thirsty: " << human.getThirsty() << std::endl;
-//    }
-//}
-//
-//void checkHumanTemperature(Human& human)
-//{
-//    if (human.getTemperature() < 10)
-//    {
-//        std::cout << "Human is cold." << std::endl;
-//        std::cout << "Temperature: " << human.getTemperature() << std::endl;
-//    }
-//    else if (human.getTemperature() > 20)
-//    {
-//        std::cout << "Human is hot." << std::endl;
-//        std::cout << "Temperature: " << human.getTemperature() << std::endl;
-//    }
-//}
