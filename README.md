@@ -7,4 +7,4 @@
 5. Voir affichage sur la console
 
 
-Si vous voulez nous faire des remarques -> S_Lin97@hotmail.com
+Si vous voulez nous faire des remarques -> S_Lin97@hotmail.com / benoitremy74@gmail.com
