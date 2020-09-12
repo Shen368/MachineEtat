@@ -1,8 +1,6 @@
 #include "StateMachine.h"
 
-
 StateMachine::StateMachine(States* Start, Human* jack) {
-
 	m_state = Start;
 	m_currentState = Start;
 	m_jack = jack;
@@ -13,7 +11,6 @@ vector<States*>& StateMachine::getAllStates() {
 }
 
 void StateMachine::AddStates(States* nextState) {
-
 	m_StatesList.push_back(nextState);
 }
 
@@ -21,7 +18,7 @@ void StateMachine::checkTransition(const Human* jack) {
 	size_t transitionSize = m_currentState->getTransition().size();
 	for (int i = 0; i < transitionSize; i++)
 	{	
-		//Je parcour ma liste de Transition et je la recupere pour pouvoir passer le Controle
+		// Je parcours ma liste de Transition et je la recupere pour pouvoir passer le Controle
 		Transition currentTransition = m_currentState->getTransition()[i];
 		if (currentTransition.getControle())
 		{
@@ -32,9 +29,7 @@ void StateMachine::checkTransition(const Human* jack) {
 }
 
 void StateMachine::ProcessState() {
-
-
-	//Tant que mon personne n'est pas more
+	// Tant que mon personne n'est pas mort
 	while (m_jack->m_alive) {
 		cout << "I'm Still Alive Yeah!" << endl;
 		m_currentState->Process();
@@ -42,9 +37,8 @@ void StateMachine::ProcessState() {
 		Sleep(2000);
 	}
 
-	//Si perso est dead,le programme s'arrete
+	// Si perso est mort, le programme s'arrete
 	if (!m_jack->m_alive) {
 		cout << "I'm dying NOOOOOOOOOoooooooo" << endl;
 	}
 }
-

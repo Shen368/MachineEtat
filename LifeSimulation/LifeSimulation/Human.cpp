@@ -1,7 +1,6 @@
 #include "Human.h"
 
-Human::Human() {
-}
+Human::Human() {}
 
 Human::~Human() {}
 
@@ -12,7 +11,6 @@ Human::Human(bool isAlive, bool isHungry, bool haveFood, bool doSport, bool isTi
 	 m_sport = doSport;
 	 m_tiredness = isTired;
 	 m_Sleep = isSleep;
-
 }
 
 std::ostream& operator<< (std::ostream& os, const Human& h) {

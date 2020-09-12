@@ -10,10 +10,10 @@
 
 int main()
 {
-    //My human Simulation
-    Human* jack = new Human(true, true, false, false, false,false);
+    // Human Simulation
+    Human* jack = new Human(true, true, false, false, false, false);
 
-    //All my state
+    // All my states
     States* Alive = new States("Morning everyone");
     States* Hungry = new States("I'm Hungry");
     States* Food = new States("Sorry Eating food now come later");
@@ -22,7 +22,7 @@ int main()
     States* Sleep = new States("Sleeping zzzzzz");
 
 
-    //All Condition for transition to another state
+    // All Condition for transition to another state
     Transition  transGetFood([&jack]() {
         cout << "GettingFood" << endl;
         if (jack->m_alive && jack->m_hunger && !jack->m_Sleep) {
@@ -78,8 +78,8 @@ int main()
         });
 
 /*---------------------------------------------------------------------------------------*/
-    //Le AddTransition(trans...)sont la pour faire le controle defini juste au dessus
-    //Le AddToCanAccesList est la avoir l'acces et passer au state suivant
+    // Le AddTransition(trans...) sont la pour faire le controle defini juste au dessus
+    // Le AddToCanAccesList est la pour avoir l'acces et passer au state suivant
 
     Alive->AddTransition(transGetFood);
     Alive->AddTransition(transEat);
@@ -95,6 +95,7 @@ int main()
     Hungry->AddTransition(transEat);
     Hungry->AddToCanAccesList(Food);
 
+
     Food->AddTransition(transSport);
     Food->AddToCanAccesList(Sport);
 
@@ -102,20 +103,22 @@ int main()
     Sport->AddTransition(transTiredness);
     Sport->AddToCanAccesList(Tired);
 
+
     Tired->AddTransition(transRest);
     Tired->AddToCanAccesList(Sleep);
+
 
     Sleep->AddTransition(transAwake);
     Sleep->AddToCanAccesList(Alive);
 
 /*---------------------------------------------------------------------------------------*/
 
-    //Je initialise mon state machine et je l'active;
-    StateMachine stateMachine(Alive, jack);                 //Ici J'ai definie l'etat "Alive" pour commencer 
-    stateMachine.ProcessState();                            //vous pouvez changer pour tester sur autre Etat Ex:"Sport"
+    // Initialise state machine et activation;
+    StateMachine stateMachine(Alive, jack);                 // Definie l'etat "Alive" pour commencer 
+    stateMachine.ProcessState();                            // vous pouvez changer pour tester sur d'autre Etat Ex: "Sport"
 
 
-    //Je detruit les new initialiser au debut pour ne pas avoir de fuite memoire
+    // Delete les new initialiser au debut pour ne pas avoir de fuite memoire
     delete Alive;
     delete Hungry;
     delete Food;
@@ -125,4 +128,3 @@ int main()
 
     return 0;
 }
-

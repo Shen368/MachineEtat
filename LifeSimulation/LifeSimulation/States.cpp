@@ -1,21 +1,19 @@
 #include "States.h"
 
-
 States::States(const char* TextOutPut) {
 	m_TextOutPut = TextOutPut;
 }
 
 void States::AddTransition(Transition transi) {
-	m_TransitionList.push_back(transi);					//Ajouter a la Liste de mes Transition
+	m_TransitionList.push_back(transi);					// Ajouter a la Liste de mes Transition
 }
 
 const vector<Transition>&  States::getTransition() {
-
 	return m_TransitionList;
 }
 
 void States::AddToCanAccesList(States* states) {
-	m_CanAccesStatList.push_back((states));				//Ajouter a la Liste des Stat qui peuvent qui accesible
+	m_CanAccesStatList.push_back((states));				// Ajouter a la Liste des Stat qui peuvent qui accesible
 }
 
 const vector<States*>& States::getCanAccesList() {
