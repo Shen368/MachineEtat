@@ -123,7 +123,7 @@ int main() {
 	// Tant que l'épée n'est pas fabriquer
 	while (true)
 	{
-		// Start goap
+		// Play goap
 		goapPlaner.Solver();
 
 		std::this_thread::sleep_for(std::chrono::seconds(2));
