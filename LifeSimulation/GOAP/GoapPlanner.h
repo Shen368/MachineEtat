@@ -17,8 +17,9 @@ public:
 
 	//friend std::ostream& operator<< (std::ostream&, const GoapPlanner&);
 
-	Action* CreateGoalAction();
-	std::vector<Action*> CreateAllActions();
+	void CreatePlanner();
+	void CreateGoalAction();
+	void CreateAllActions();
 
 	void Solver();
 	std::vector<Action*> GetActionsToMakeOurGoal(WorldState precondition);

@@ -44,17 +44,22 @@ Action* GoapPlanner::GetGoalAction() {
 //	return os;
 //}
 
-Action* GoapPlanner::CreateGoalAction() {
+void GoapPlanner::CreatePlanner() {
+	CreateGoalAction();
+	CreateAllActions();
+}
+
+void GoapPlanner::CreateGoalAction() {
 	Action* FabriquerEpee = new Action("Fabriquer une epee");
 	FabriquerEpee->AddPrecondition(WorldState::FORGERON);
 	FabriquerEpee->AddPrecondition(WorldState::FER);
 	FabriquerEpee->AddEffect(WorldState::FABRIQUER_EPEE);
 
 	goalAction = FabriquerEpee;
-	return goalAction;
+	//return goalAction;
 }
 
-std::vector<Action*> GoapPlanner::CreateAllActions() {
+void GoapPlanner::CreateAllActions() {
 	allActions.reserve(2);
 
 	Action* Miner = new Action("Miner");
@@ -69,7 +74,7 @@ std::vector<Action*> GoapPlanner::CreateAllActions() {
 	allActions.push_back(Miner);
 	allActions.push_back(Forgeron);
 
-	return allActions;
+	//return allActions;
 }
 
 void GoapPlanner::Solver() {
