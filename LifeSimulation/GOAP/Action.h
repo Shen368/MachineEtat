@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 
-enum class WorldState {
+const enum class WorldState {
     FABRIQUER_EPEE,
     FORGERON,
     FER,
@@ -16,21 +16,21 @@ class Action
 private:
     std::string m_name;
     int m_cost;
-    std::vector<WorldState> m_preconditions;
-    std::vector<WorldState> m_effects;
+    std::vector<const WorldState> m_preconditions;
+    std::vector<const WorldState> m_effects;
 
 public:
     Action();
-    Action(std::string name, int cost = 1);
+    Action(const std::string name, const int cost = 1);
     ~Action();
 
-    std::string GetName();
-    int GetCost();
-    std::vector<WorldState> GetPreconditions();
-    std::vector<WorldState> GetEffect();
+    const std::string GetName();
+    const int GetCost();
+    std::vector<const WorldState> GetPreconditions();
+    std::vector<const WorldState> GetEffect();
 
     void SetCost(int cost);
 
-    void AddPrecondition(WorldState name);
-    void AddEffect(WorldState name);
+    void AddPrecondition(const WorldState name);
+    void AddEffect(const WorldState name);
 };

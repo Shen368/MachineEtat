@@ -1,16 +1,16 @@
 #include "Effect.h"
 
 Effect::Effect() {
-	m_name = WorldState::EPEE;
+	m_name = WorldState::FABRIQUER_EPEE;
 }
 
-Effect::Effect(WorldState name) {
+Effect::Effect(const WorldState name) {
 	m_name = name;
 }
 
 Effect::~Effect() {}
 
-WorldState Effect::GetName() {
+const WorldState Effect::GetName() {
 	return m_name;
 }
 

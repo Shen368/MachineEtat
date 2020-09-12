@@ -4,13 +4,13 @@ Precondition::Precondition() {
     m_name = WorldState::FABRIQUER_EPEE;
 }
 
-Precondition::Precondition(WorldState name) {
+Precondition::Precondition(const WorldState name) {
     m_name = name;
 }
 
 Precondition::~Precondition() {}
 
-WorldState Precondition::GetName() {
+const WorldState Precondition::GetName() {
     return m_name;
 }
 

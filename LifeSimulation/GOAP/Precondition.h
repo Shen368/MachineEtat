@@ -10,10 +10,10 @@ class Precondition
 
 public :
 	Precondition();
-	Precondition(WorldState name);
+	Precondition(const WorldState name);
 	~Precondition();
 
-	WorldState GetName();
+	const WorldState GetName();
 
 	bool Process();
 };

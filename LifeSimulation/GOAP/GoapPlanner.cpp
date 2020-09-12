@@ -4,7 +4,7 @@ GoapPlanner::GoapPlanner() {
 	goalAction = nullptr;
 }
 
-GoapPlanner::GoapPlanner(Action* goal) {
+GoapPlanner::GoapPlanner(const Action* goal) {
 	goalAction = goal;
 }
 
@@ -19,11 +19,11 @@ GoapPlanner::~GoapPlanner() {
 	delete goalAction;
 }
 
-std::vector<Action*> GoapPlanner::GetAllActions() {
+std::vector<const Action*> GoapPlanner::GetAllActions() {
 	return allActions;
 }
 
-Action* GoapPlanner::GetGoalAction() {
+const Action* GoapPlanner::GetGoalAction() {
 	return goalAction;
 }
 

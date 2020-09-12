@@ -10,10 +10,10 @@ private:
 
 public:
 	Effect();
-	Effect(WorldState name);
+	Effect(const WorldState name);
 	~Effect();
 
-	WorldState GetName();
+	const WorldState GetName();
 		
 	void ProcessAction();
 };

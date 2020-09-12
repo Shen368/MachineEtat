@@ -4,16 +4,17 @@
 class GoapPlanner
 {
 private:
-	std::vector<Action*> allActions;
-	Action* goalAction;
+	std::vector<const Action*> allActions;
+	const Action* goalAction;
+	std::vector<std::vector<const Action*>> choosenPath;
 
 public:
 	GoapPlanner();
-	GoapPlanner(Action* goal);
+	GoapPlanner(const Action* goal);
 	~GoapPlanner();
 
-	std::vector<Action*> GetAllActions();
-	Action* GetGoalAction();
+	std::vector<const Action*> GetAllActions();
+	const Action* GetGoalAction();
 
 	//friend std::ostream& operator<< (std::ostream&, const GoapPlanner&);
 

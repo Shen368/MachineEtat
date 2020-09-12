@@ -16,19 +16,19 @@ Action::Action(std::string name, int cost) {
 
 Action::~Action() {}
 
-std::string Action::GetName() {
+const std::string Action::GetName() {
     return m_name;
 }
 
-int Action::GetCost() {
+const int Action::GetCost() {
     return m_cost;
 }
 
-std::vector<WorldState> Action::GetPreconditions() {
+std::vector<const WorldState> Action::GetPreconditions() {
     return m_preconditions;
 }
 
-std::vector<WorldState> Action::GetEffect() {
+std::vector<const WorldState> Action::GetEffect() {
     return m_effects;
 }
 
@@ -36,10 +36,10 @@ void Action::SetCost(int cost) {
     m_cost = cost;
 }
 
-void Action::AddPrecondition(WorldState name) {
+void Action::AddPrecondition(const WorldState name) {
     m_preconditions.push_back(name);
 }
 
-void Action::AddEffect(WorldState name) {
+void Action::AddEffect(const WorldState name) {
     m_effects.push_back(name);
 }
