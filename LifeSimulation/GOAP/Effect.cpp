@@ -10,4 +10,8 @@ Effect::Effect(WorldState name) {
 
 Effect::~Effect() {}
 
+WorldState Effect::GetName() {
+	return m_name;
+}
+
 void Effect::ProcessAction() {}

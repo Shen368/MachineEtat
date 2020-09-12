@@ -12,6 +12,8 @@ public:
 	Effect();
 	Effect(WorldState name);
 	~Effect();
+
+	WorldState GetName();
 		
 	void ProcessAction();
 };
