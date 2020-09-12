@@ -48,7 +48,7 @@ Action* GoapPlanner::CreateGoalAction() {
 	Action* FabriquerEpee = new Action("Fabriquer une epee");
 	FabriquerEpee->AddPrecondition(WorldState::FORGERON);
 	FabriquerEpee->AddPrecondition(WorldState::FER);
-	FabriquerEpee->AddEffect(WorldState::EPEE);
+	FabriquerEpee->AddEffect(WorldState::FABRIQUER_EPEE);
 
 	goalAction = FabriquerEpee;
 	return goalAction;

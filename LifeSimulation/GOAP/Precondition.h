@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "Action.h"
+#include"GameState.h"
 
 class Precondition
 {

@@ -3,7 +3,7 @@
 #include <vector>
 
 enum class WorldState {
-    EPEE,
+    FABRIQUER_EPEE,
     FORGERON,
     FER,
     PIOCHE,
@@ -21,7 +21,7 @@ private:
 
 public:
     Action();
-    Action(std::string name, int cost = 0);
+    Action(std::string name, int cost = 1);
     ~Action();
 
     std::string GetName();

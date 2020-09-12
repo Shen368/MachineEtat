@@ -1,12 +1,17 @@
 #include "Action.h"
 
 Action::Action() {
-    m_cost = 0;
+    m_name = "";
+    m_cost = 1;
+    m_preconditions.reserve(0);
+    m_effects.reserve(0);
 }
 
 Action::Action(std::string name, int cost) {
     m_name = name;
     m_cost = cost;
+    m_preconditions.reserve(0);
+    m_effects.reserve(0);
 }
 
 Action::~Action() {}

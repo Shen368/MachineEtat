@@ -1,7 +1,7 @@
 #include "Precondition.h"
 
 Precondition::Precondition() {
-    m_name = WorldState::EPEE;
+    m_name = WorldState::FABRIQUER_EPEE;
 }
 
 Precondition::Precondition(WorldState name) {
